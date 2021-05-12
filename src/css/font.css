@@ -1,0 +1,6 @@
+@font-face {
+    font-family: Gotham Rounded;
+    src: url('../fonts/smtg.woff') format('woff'), url('smtg.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
