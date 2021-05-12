@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import RecipeList from './RecipeList';
 import '../css/app.css';
 import { v4 as uuidv4 } from 'uuid';
@@ -31,7 +31,21 @@ const recipeList = [
 ];
 
 export default function App() {
+  const LOCAL_STORAGE_KEY = 'cookingWithReact.recipes';
   const [recipes, setRecipes] = useState(recipeList);
+  
+  useEffect(() => {
+    const recipeStore = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    if (recipeStore !== null) setRecipes(recipeStore);
+  }, []); // this will run only when the app component is rendered for the first time
+  
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(recipes));
+    // unmount effect
+    // return () => { 
+    //   console.log('recipes set 👍️');
+    // }
+  }, [recipes]); // this will run when there is a change in the recipes(state)
   
   const recipeContextValue = {handleRecipeAdd, handleRecipeDelete};
   
