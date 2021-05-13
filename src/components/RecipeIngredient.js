@@ -1,6 +1,8 @@
 import React from 'react';
 
 export default function RecipeIngredient() {
+    // console.log('RenderLog: RecipeIngredient');
+    
     return (
         <React.Fragment>
             <input type="text" className="recipe-edit__input"/>

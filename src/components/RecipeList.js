@@ -3,6 +3,8 @@ import Recipe from './Recipe';
 import {RecipeControllerContext} from './App';
 
 export default function RecipeList(props) {
+    console.log('RenderLog: RecipeList');
+    
     const {handleRecipeAdd} = useContext(RecipeControllerContext);
     const {recipes} = props;
     

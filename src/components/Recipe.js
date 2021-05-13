@@ -3,6 +3,8 @@ import IngredientList from './IngredientList';
 import {RecipeControllerContext} from './App';
 
 export default function Recipe(props) {
+    console.log('RenderLog: Recipe');
+    
     const { handleRecipeDelete } = useContext(RecipeControllerContext);
     
     const {

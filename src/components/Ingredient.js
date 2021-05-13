@@ -1,6 +1,8 @@
 import React from 'react';
 
 export default function Ingredient(props) {
+    // console.log('RenderLog: Ingredient');
+    
     const {
         name,
         amount

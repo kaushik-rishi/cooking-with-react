@@ -32,6 +32,8 @@ const recipeList = [
 ];
 
 export default function App() {
+  console.log('RenderLog: App');
+  
   const LOCAL_STORAGE_KEY = 'cookingWithReact.recipes';
   const [recipes, setRecipes] = useState(recipeList);
   

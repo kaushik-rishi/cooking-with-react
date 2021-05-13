@@ -2,6 +2,8 @@ import React from 'react';
 import RecipeIngredient from './RecipeIngredient';
 
 export default function RecipeEdit() {
+    console.log('RenderLog: RecipeEdit');
+    
     return (
         <div className="recipe-edit">
             <div className="recipe-edit__close-btn--container">
