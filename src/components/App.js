@@ -57,18 +57,12 @@ export default function App() {
   function handleRecipeAdd() {
     const newRecipe = {
         id: uuidv4(),
-        // name: 'New',
-        // servings: 1,
-        // cookTime: '1:00',
-        // instructions: 'nob',
-        // ingredients: [
-        //   { name: 'nub', amount: '1kg' }
-        // ]
         name: '',
         servings: 1,
         cookTime: '',
         instructions: '',
         ingredients: [
+          {id: uuidv4(), name: '', amount: ''}
         ]
     }
     setRecipes([...recipes, newRecipe]);
