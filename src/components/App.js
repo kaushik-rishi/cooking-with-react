@@ -14,8 +14,8 @@ const recipeList = [
     cookTime: '1:00',
     instructions: '1. On stove\n2. Make curry\n3. Eat',
     ingredients: [
-      { name: 'dal', amount: '1kg' },
-      { name: 'palak', amount: '3 kattas' }
+      { id: 1, name: 'dal', amount: '1kg' },
+      { id: 2, name: 'palak', amount: '3 kattas' }
     ]
   },
   {
@@ -25,8 +25,8 @@ const recipeList = [
     cookTime: '3:00',
     instructions: '1. On stove\n2. Make chicken\n3. Eat',
     ingredients: [
-      { name: 'chicken', amount: '2kg' },
-      { name: 'maida', amount: '1.5 kg' }
+      { id: 1, name: 'chicken', amount: '2kg' },
+      { id: 2, name: 'maida', amount: '1.5 kg' }
     ]
   }
 ];
@@ -52,24 +52,38 @@ export default function App() {
     // }
   }, [recipes]); // this will run when there is a change in the recipes(state)
   
-  const recipeContextValue = {handleRecipeAdd, handleRecipeDelete, handleSelectedRecipeId};
+  const recipeContextValue = {handleRecipeAdd, handleRecipeDelete, handleSelectedRecipeId, handleRecipeChange};
   
   function handleRecipeAdd() {
     const newRecipe = {
         id: uuidv4(),
-        name: 'New',
+        // name: 'New',
+        // servings: 1,
+        // cookTime: '1:00',
+        // instructions: 'nob',
+        // ingredients: [
+        //   { name: 'nub', amount: '1kg' }
+        // ]
+        name: '',
         servings: 1,
-        cookTime: '1:00',
-        instructions: 'nob',
+        cookTime: '',
+        instructions: '',
         ingredients: [
-          { name: 'nub', amount: '1kg' }
         ]
     }
     setRecipes([...recipes, newRecipe]);
+    handleSelectedRecipeId(newRecipe.id);
   }
   
   function handleRecipeDelete(id) {
     setRecipes(recipes.filter(recipe => recipe.id !== id));
+  }
+  
+  function handleRecipeChange(id, recipeEdited) {
+    const newRecipes = [...recipes];
+    const recipeIndex = newRecipes.findIndex(r => r.id === id);
+    newRecipes[recipeIndex] = recipeEdited;
+    setRecipes(newRecipes);
   }
   
   function handleSelectedRecipeId(id) {
