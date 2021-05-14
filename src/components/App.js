@@ -7,28 +7,28 @@ import { v4 as uuidv4 } from 'uuid';
 export const RecipeControllerContext = React.createContext();
 
 const recipeList = [
-  {
-    id: 1,
-    name: 'Palakura pappu',
-    servings: 3,
-    cookTime: '1:00',
-    instructions: '1. On stove\n2. Make curry\n3. Eat',
-    ingredients: [
-      { id: 1, name: 'dal', amount: '1kg' },
-      { id: 2, name: 'palak', amount: '3 kattas' }
-    ]
-  },
-  {
-    id: 2,
-    name: 'Mugalai biryani',
-    servings: 2,
-    cookTime: '3:00',
-    instructions: '1. On stove\n2. Make chicken\n3. Eat',
-    ingredients: [
-      { id: 1, name: 'chicken', amount: '2kg' },
-      { id: 2, name: 'maida', amount: '1.5 kg' }
-    ]
-  }
+  // {
+  //   id: 1,
+  //   name: 'Palakura pappu',
+  //   servings: 3,
+  //   cookTime: '1:00',
+  //   instructions: '1. On stove\n2. Make curry\n3. Eat',
+  //   ingredients: [
+  //     { id: 1, name: 'dal', amount: '1kg' },
+  //     { id: 2, name: 'palak', amount: '3 kattas' }
+  //   ]
+  // },
+  // {
+  //   id: 2,
+  //   name: 'Mugalai biryani',
+  //   servings: 2,
+  //   cookTime: '3:00',
+  //   instructions: '1. On stove\n2. Make chicken\n3. Eat',
+  //   ingredients: [
+  //     { id: 1, name: 'chicken', amount: '2kg' },
+  //     { id: 2, name: 'maida', amount: '1.5 kg' }
+  //   ]
+  // }
 ];
 
 export default function App() {
